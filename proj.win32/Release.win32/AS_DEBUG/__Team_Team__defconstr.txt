@@ -1,0 +1,22 @@
+Team::Team()
+
+Temps: 1
+
+Variables: 
+ 000: Team this
+ 001: (heap) array {noname}
+
+
+- 3,16 -
+    0   1 *    SUSPEND
+    1   1 *    CALL     218           (uint16[]@ $fact())
+    3   1 *    STOREOBJ v1
+    4   1 *    PshVPtr  v1
+    5   2 *    PshVPtr  v0
+    6   3 *    ADDSi    v20, 134217745
+    8   3 *    REFCPY   0x98a8e78
+   10   2 *    PopPtr
+   11   1 *    FREE     v1, 160075384
+- 4,6 -
+   13   1 *    SUSPEND
+   14   1 *    RET      1

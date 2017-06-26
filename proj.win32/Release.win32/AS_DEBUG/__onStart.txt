@@ -1,0 +1,233 @@
+void onStart()
+
+Temps: 1, 9, 17, 18, 19, 21, 23, 26
+
+Variables: 
+ 002: uint triggerLeftIdx
+ 010: uint triggerRightIdx
+ 020: float middlePosX
+ 022: (heap) uint[] arr
+ 024: uint i
+ 018: (heap) array {noname}
+ 023: (heap) array {noname}
+ 009: string {noname}
+ 017: string {noname}
+ 026: Vec2 {noname}
+
+
+- 72,2 -
+    0  26 *    SUSPEND
+    1  26 *    CALLSYS  118           (bool isServer())
+    3  26 *    CpyRtoV4 v1
+    4  26 *    NOT      v1
+    5  26 *    CpyVtoR4 v1
+    6  26 *    JLowZ    +3              (d:11)
+- 73,3 -
+    8  26 *    SUSPEND
+            {
+            }
+    9  26 *    JMP      +227              (d:238)
+- 75,2 -
+            1:
+   11  26 *    SUSPEND
+               VarDecl  0
+   12  26 *    STR      0         (l:8 s:"LeftGoal")
+   13  28 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   15  26 *    PshRPtr
+   16  27 *    PSF      v9
+   17  28 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   19  26 *    PSF      v9
+   20  27 *    CALLSYS  127           (uint getObjectIndexByName(const string&in))
+   22  26 *    CpyRtoV4 v1
+   23  26 *    PSF      v9
+   24  27 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   26  26 *    CpyVtoV4 v2, v1
+- 76,2 -
+   28  26 *    SUSPEND
+               VarDecl  1
+   29  26 *    STR      1         (l:9 s:"RightGoal")
+   30  28 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   32  26 *    PshRPtr
+   33  27 *    PSF      v9
+   34  28 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   36  26 *    PSF      v9
+   37  27 *    CALLSYS  127           (uint getObjectIndexByName(const string&in))
+   39  26 *    CpyRtoV4 v1
+   40  26 *    PSF      v9
+   41  27 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   43  26 *    CpyVtoV4 v10, v1
+- 78,2 -
+   45  26 *    SUSPEND
+   46  26 *    STR      2         (l:21 s:"onTriggerC")
+   47  28 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   49  26 *    PshRPtr
+   50  27 *    PSF      v9
+   51  28 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   53  26 *    VAR      v9
+   54  27 *    STR      3         (l:12 s:"contactEnt")
+   55  29 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   57  27 *    PshRPtr
+   58  28 *    PSF      v17
+   59  29 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v17, 1
+   61  27 *    VAR      v17
+   62  28 *    PshV4    v2
+   63  29 *    GETREF   1
+   64  29 *    GETREF   2
+   65  29 *    CALLSYS  174           (void addObjectEvent(uint, const string&in, const string&in))
+   67  26 *    PSF      v9
+   68  27 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   70  26 *    PSF      v17
+   71  27 *    CALLSYS  22           (string::~string())
+- 79,2 -
+               ObjInfo  v17, 0
+   73  26 *    SUSPEND
+   74  26 *    STR      2         (l:21 s:"onTriggerC")
+   75  28 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   77  26 *    PshRPtr
+   78  27 *    PSF      v9
+   79  28 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   81  26 *    VAR      v9
+   82  27 *    STR      3         (l:12 s:"contactEnt")
+   83  29 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   85  27 *    PshRPtr
+   86  28 *    PSF      v17
+   87  29 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v17, 1
+   89  27 *    VAR      v17
+   90  28 *    PshV4    v10
+   91  29 *    GETREF   1
+   92  29 *    GETREF   2
+   93  29 *    CALLSYS  174           (void addObjectEvent(uint, const string&in, const string&in))
+   95  26 *    PSF      v9
+   96  27 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   98  26 *    PSF      v17
+   99  27 *    CALLSYS  22           (string::~string())
+- 81,2 -
+               ObjInfo  v17, 0
+  101  26 *    SUSPEND
+  102  26 *    PshC4    0x2          (i:2, f:2.8026e-045)
+  104  27 *    CALLSYS  178           (void initScore(uint))
+- 83,2 -
+  106  26 *    SUSPEND
+  107  26 *    SetV4    v19, 0x0          (i:0, f:0)
+  109  26 *    PshC4    0x0          (i:0, f:0)
+  111  27 *    PshGPtr  161465744
+  113  28 *    CHKREF
+  114  28 *    RefCpyV  v18, 161246248
+  116  28 *    Thiscall1 193           (Team& array::opIndex(uint))
+  118  26 *    PshRPtr
+  119  27 *    ADDSi    v24, 134217745
+  121  27 *    PopRPtr
+  122  26 *    WRTV4    v19
+  123  26 *    FREE     v18, 161246248
+- 84,2 -
+  125  26 *    SUSPEND
+  126  26 *    SetV4    v19, 0x0          (i:0, f:0)
+  128  26 *    PshC4    0x1          (i:1, f:1.4013e-045)
+  130  27 *    PshGPtr  161465744
+  132  28 *    CHKREF
+  133  28 *    RefCpyV  v18, 161246248
+  135  28 *    Thiscall1 193           (Team& array::opIndex(uint))
+  137  26 *    PshRPtr
+  138  27 *    ADDSi    v24, 134217745
+  140  27 *    PopRPtr
+  141  26 *    WRTV4    v19
+  142  26 *    FREE     v18, 161246248
+- 86,2 -
+  144  26 *    SUSPEND
+               VarDecl  2
+  145  26 *    CpyGtoV4 v1, 154324476
+  147  26 *    SetV4    v19, 0x40000000          (i:1073741824, f:2)
+  149  26 *    DIVf     v1, v1, v19
+  151  26 *    SetV4    v21, 0x42000000          (i:1107296256, f:32)
+  153  26 *    DIVf     v20, v1, v21
+- 88,2 -
+  155  26 *    SUSPEND
+               VarDecl  3
+  156  26 *    PshC4    0x5          (i:5, f:7.00649e-045)
+  158  27 *    CALLSYS  165           (uint[]@ findObjectsIndexByType(uint))
+  160  26 *    STOREOBJ v23
+  161  26 *    ChkNullV v23
+  162  26 *    VAR      v23
+  163  27 *    CALL     150           (uint[]@ $fact())
+  165  27 *    STOREOBJ v22
+  166  27 *    PshVPtr  v22
+  167  28 *    GETOBJREF 1
+  168  28 *    CALLSYS  156           (uint[]& array::opAssign(const uint[]&in))
+  170  26 *    FREE     v23, 158595520
+- 89,7 -
+  172  26 *    SUSPEND
+               VarDecl  4
+  173  26 *    SetV4    v24, 0x0          (i:0, f:0)
+  175  26 *    JMP      +49              (d:226)
+            5:
+  177  26 *    SUSPEND
+- 91,3 -
+            {
+  178  26 *    SUSPEND
+  179  26 *    PshV4    v24
+  180  27 *    PshVPtr  v22
+  181  28 *    Thiscall1 154           (uint& array::opIndex(uint))
+  183  26 *    RDR4     v19
+  184  26 *    PshV4    v19
+  185  27 *    PSF      v26
+  186  28 *    CALLSYS  168           (Vec2 getObjectPosition(uint))
+               ObjInfo  v26, 1
+  188  26 *    LoadVObjR v26, v0, 67108877
+  191  26 *    RDR4     v1
+               ObjInfo  v26, 0
+  192  26 *    CMPf     v1, v20
+  194  26 *    JS       +15              (d:211)
+- 92,4 -
+  196  26 *    SUSPEND
+  197  26 *    PshV4    v24
+  198  27 *    PshVPtr  v22
+  199  28 *    Thiscall1 154           (uint& array::opIndex(uint))
+  201  26 *    RDR4     v21
+  202  26 *    VAR      v21
+  203  27 *    PshGPtr  161191496
+  205  28 *    CHKREF
+  206  28 *    GETREF   1
+  207  28 *    CALLSYS  159           (void array::insertLast(const uint&in))
+  209  26 *    JMP      +13              (d:224)
+- 94,4 -
+            6:
+  211  26 *    SUSPEND
+  212  26 *    PshV4    v24
+  213  27 *    PshVPtr  v22
+  214  28 *    Thiscall1 154           (uint& array::opIndex(uint))
+  216  26 *    RDR4     v19
+  217  26 *    VAR      v19
+  218  27 *    PshGPtr  161467864
+  220  28 *    CHKREF
+  221  28 *    GETREF   1
+  222  28 *    CALLSYS  159           (void array::insertLast(const uint&in))
+- 89,39 -
+            7:
+            }
+            4:
+  224  26 *    SUSPEND
+  225  26 *    IncVi    v24
+- 89,21 -
+            2:
+  226  26 *    SUSPEND
+  227  26 *    PshVPtr  v22
+  228  27 *    CALLSYS  86           (uint array::length() const)
+  230  26 *    CpyRtoV4 v1
+  231  26 *    CMPu     v24, v1
+  233  26 *    JS       -58              (d:177)
+- 96,2 -
+            3:
+  235  26 *    SUSPEND
+  236  26 *    FREE     v22, 158595520
+            0:
+  238  26 *    RET      0

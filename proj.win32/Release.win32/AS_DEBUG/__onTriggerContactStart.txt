@@ -1,0 +1,325 @@
+void onTriggerContactStart(uint, uint, const ContactInfo&in)
+
+Temps: 1, 2, 9, 16, 17, 18, 20
+
+Variables: 
+ 000: uint owner
+ -001: uint obj
+ -002: const ContactInfo& contact
+ 019: uint i
+ 019: uint i
+ 017: (heap) array {noname}
+ 020: (heap) array {noname}
+ 009: string {noname}
+ 016: string {noname}
+
+
+- 19,2 -
+               VarDecl  0
+               VarDecl  1
+               VarDecl  2
+    0  20 *    SUSPEND
+    1  20 *    CALLSYS  118           (bool isServer())
+    3  20 *    CpyRtoV4 v1
+    4  20 *    NOT      v1
+    5  20 *    CpyVtoR4 v1
+    6  20 *    JLowZ    +4              (d:12)
+    8  20 *    SetV1    v1, 0x1
+   10  20 *    JMP      +5              (d:17)
+            2:
+   12  20 *    CALLSYS  121           (bool isGameOver())
+   14  20 *    CpyRtoV4 v2
+   15  20 *    CpyVtoV4 v1, v2
+            3:
+   17  20 *    CpyVtoR4 v1
+   18  20 *    JLowZ    +3              (d:23)
+- 20,3 -
+   20  20 *    SUSPEND
+            {
+            }
+   21  20 *    JMP      +332              (d:355)
+- 22,2 -
+            1:
+   23  20 *    SUSPEND
+   24  20 *    LDG      161176248
+   26  20 *    RDR1     v2
+   27  20 *    CpyVtoR4 v2
+   28  20 *    JLowZ    +3              (d:33)
+- 23,3 -
+   30  20 *    SUSPEND
+            {
+            }
+   31  20 *    JMP      +322              (d:355)
+- 24,2 -
+            4:
+   33  20 *    SUSPEND
+   34  20 *    PshV4    v-1
+   35  21 *    CALLSYS  166           (uint getObjectType(uint))
+   37  20 *    CpyRtoV4 v1
+   38  20 *    CMPIu    v1, 3
+   40  20 *    JNZ      +312              (d:354)
+- 26,3 -
+            {
+   42  20 *    SUSPEND
+   43  20 *    STR      0         (l:8 s:"LeftGoal")
+   44  22 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   46  20 *    PshRPtr
+   47  21 *    PSF      v16
+   48  22 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v16, 1
+   50  20 *    VAR      v16
+   51  21 *    PshV4    v0
+   52  22 *    PSF      v9
+   53  23 *    CALLSYS  167           (string getObjectName(uint))
+               ObjInfo  v9, 1
+   55  21 *    PSF      v9
+   56  22 *    GETREF   1
+   57  22 *    CALLSYS  25           (bool string::opEquals(const string&in) const)
+   59  20 *    CpyRtoV4 v2
+   60  20 *    PSF      v9
+   61  21 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   63  20 *    PSF      v16
+   64  21 *    CALLSYS  22           (string::~string())
+               ObjInfo  v16, 0
+   66  20 *    CpyVtoR4 v2
+   67  20 *    JLowZ    +125              (d:194)
+- 28,4 -
+            {
+   69  20 *    SUSPEND
+   70  20 *    PshC4    0x0          (i:0, f:0)
+   72  21 *    PshGPtr  161465744
+   74  22 *    CHKREF
+   75  22 *    RefCpyV  v17, 161246248
+   77  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+   79  20 *    PshRPtr
+   80  21 *    ADDSi    v24, 134217745
+   82  21 *    PopRPtr
+   83  20 *    INCi
+   84  20 *    FREE     v17, 161246248
+- 29,4 -
+   86  20 *    SUSPEND
+   87  20 *    PshC4    0x0          (i:0, f:0)
+   89  21 *    PshGPtr  161465744
+   91  22 *    CHKREF
+   92  22 *    RefCpyV  v17, 161246248
+   94  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+   96  20 *    PshRPtr
+   97  21 *    ADDSi    v24, 134217745
+   99  21 *    PopRPtr
+  100  20 *    RDR4     v2
+  101  20 *    PshV4    v2
+  102  21 *    PshC4    0x0          (i:0, f:0)
+  104  22 *    CALLSYS  179           (void setScore(uint, int))
+  106  20 *    FREE     v17, 161246248
+- 31,4 -
+  108  20 *    SUSPEND
+  109  20 *    PshC4    0x0          (i:0, f:0)
+  111  21 *    PshGPtr  161465744
+  113  22 *    CHKREF
+  114  22 *    RefCpyV  v17, 161246248
+  116  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+  118  20 *    PshRPtr
+  119  21 *    ADDSi    v24, 134217745
+  121  21 *    PopRPtr
+  122  20 *    RDR4     v1
+  123  20 *    CpyGtoV4 v18, 161464568
+  125  20 *    FREE     v17, 161246248
+  127  20 *    CMPi     v1, v18
+  129  20 *    JS       +61              (d:192)
+- 33,10 -
+            {
+  131  20 *    SUSPEND
+               VarDecl  3
+  132  20 *    SetV4    v19, 0x0          (i:0, f:0)
+  134  20 *    JMP      +30              (d:166)
+            11:
+  136  20 *    SUSPEND
+- 35,6 -
+            {
+  137  20 *    SUSPEND
+  138  20 *    PshV4    v19
+  139  21 *    PshC4    0x0          (i:0, f:0)
+  141  22 *    PshGPtr  161465744
+  143  23 *    CHKREF
+  144  23 *    RefCpyV  v17, 161246248
+  146  23 *    Thiscall1 193           (Team& array::opIndex(uint))
+  148  21 *    PshRPtr
+  149  22 *    ADDSi    v20, 134217745
+  151  22 *    RDSPtr
+  152  22 *    RefCpyV  v20, 160075384
+  154  22 *    Thiscall1 222           (uint16& array::opIndex(uint))
+  156  20 *    RDR2     v18
+  157  20 *    PshV4    v18
+  158  21 *    CALLSYS  122           (void scoreUser(uint16))
+  160  20 *    FREE     v17, 161246248
+  162  20 *    FREE     v20, 160075384
+- 33,55 -
+            }
+            10:
+  164  20 *    SUSPEND
+  165  20 *    IncVi    v19
+- 33,24 -
+            8:
+  166  20 *    SUSPEND
+  167  20 *    PshC4    0x0          (i:0, f:0)
+  169  21 *    PshGPtr  161465744
+  171  22 *    CHKREF
+  172  22 *    RefCpyV  v17, 161246248
+  174  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+  176  20 *    PshRPtr
+  177  21 *    ADDSi    v20, 134217745
+  179  21 *    RDSPtr
+  180  21 *    CALLSYS  86           (uint array::length() const)
+  182  20 *    CpyRtoV4 v18
+  183  20 *    FREE     v17, 161246248
+  185  20 *    CMPu     v19, v18
+  187  20 *    JS       -53              (d:136)
+- 37,5 -
+            9:
+  189  20 *    SUSPEND
+  190  20 *    CALLSYS  120           (void setGameOver())
+            }
+            7:
+            }
+  192  20 *    JMP      +150              (d:344)
+- 40,8 -
+            6:
+  194  20 *    SUSPEND
+  195  20 *    STR      1         (l:9 s:"RightGoal")
+  196  22 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  198  20 *    PshRPtr
+  199  21 *    PSF      v9
+  200  22 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+  202  20 *    VAR      v9
+  203  21 *    PshV4    v0
+  204  22 *    PSF      v16
+  205  23 *    CALLSYS  167           (string getObjectName(uint))
+               ObjInfo  v16, 1
+  207  21 *    PSF      v16
+  208  22 *    GETREF   1
+  209  22 *    CALLSYS  25           (bool string::opEquals(const string&in) const)
+  211  20 *    CpyRtoV4 v2
+  212  20 *    PSF      v16
+  213  21 *    CALLSYS  22           (string::~string())
+               ObjInfo  v16, 0
+  215  20 *    PSF      v9
+  216  21 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+  218  20 *    CpyVtoR4 v2
+  219  20 *    JLowZ    +123              (d:344)
+- 42,4 -
+            {
+  221  20 *    SUSPEND
+  222  20 *    PshC4    0x1          (i:1, f:1.4013e-045)
+  224  21 *    PshGPtr  161465744
+  226  22 *    CHKREF
+  227  22 *    RefCpyV  v17, 161246248
+  229  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+  231  20 *    PshRPtr
+  232  21 *    ADDSi    v24, 134217745
+  234  21 *    PopRPtr
+  235  20 *    INCi
+  236  20 *    FREE     v17, 161246248
+- 43,4 -
+  238  20 *    SUSPEND
+  239  20 *    PshC4    0x1          (i:1, f:1.4013e-045)
+  241  21 *    PshGPtr  161465744
+  243  22 *    CHKREF
+  244  22 *    RefCpyV  v17, 161246248
+  246  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+  248  20 *    PshRPtr
+  249  21 *    ADDSi    v24, 134217745
+  251  21 *    PopRPtr
+  252  20 *    RDR4     v2
+  253  20 *    PshV4    v2
+  254  21 *    PshC4    0x1          (i:1, f:1.4013e-045)
+  256  22 *    CALLSYS  179           (void setScore(uint, int))
+  258  20 *    FREE     v17, 161246248
+- 45,4 -
+  260  20 *    SUSPEND
+  261  20 *    PshC4    0x1          (i:1, f:1.4013e-045)
+  263  21 *    PshGPtr  161465744
+  265  22 *    CHKREF
+  266  22 *    RefCpyV  v17, 161246248
+  268  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+  270  20 *    PshRPtr
+  271  21 *    ADDSi    v24, 134217745
+  273  21 *    PopRPtr
+  274  20 *    RDR4     v1
+  275  20 *    CpyGtoV4 v2, 161464568
+  277  20 *    FREE     v17, 161246248
+  279  20 *    CMPi     v1, v2
+  281  20 *    JS       +61              (d:344)
+- 47,10 -
+            {
+  283  20 *    SUSPEND
+               VarDecl  4
+  284  20 *    SetV4    v19, 0x0          (i:0, f:0)
+  286  20 *    JMP      +30              (d:318)
+            18:
+  288  20 *    SUSPEND
+- 49,6 -
+            {
+  289  20 *    SUSPEND
+  290  20 *    PshV4    v19
+  291  21 *    PshC4    0x1          (i:1, f:1.4013e-045)
+  293  22 *    PshGPtr  161465744
+  295  23 *    CHKREF
+  296  23 *    RefCpyV  v17, 161246248
+  298  23 *    Thiscall1 193           (Team& array::opIndex(uint))
+  300  21 *    PshRPtr
+  301  22 *    ADDSi    v20, 134217745
+  303  22 *    RDSPtr
+  304  22 *    RefCpyV  v20, 160075384
+  306  22 *    Thiscall1 222           (uint16& array::opIndex(uint))
+  308  20 *    RDR2     v18
+  309  20 *    PshV4    v18
+  310  21 *    CALLSYS  122           (void scoreUser(uint16))
+  312  20 *    FREE     v17, 161246248
+  314  20 *    FREE     v20, 160075384
+- 47,55 -
+            }
+            17:
+  316  20 *    SUSPEND
+  317  20 *    IncVi    v19
+- 47,24 -
+            15:
+  318  20 *    SUSPEND
+  319  20 *    PshC4    0x1          (i:1, f:1.4013e-045)
+  321  21 *    PshGPtr  161465744
+  323  22 *    CHKREF
+  324  22 *    RefCpyV  v17, 161246248
+  326  22 *    Thiscall1 193           (Team& array::opIndex(uint))
+  328  20 *    PshRPtr
+  329  21 *    ADDSi    v20, 134217745
+  331  21 *    RDSPtr
+  332  21 *    CALLSYS  86           (uint array::length() const)
+  334  20 *    CpyRtoV4 v18
+  335  20 *    FREE     v17, 161246248
+  337  20 *    CMPu     v19, v18
+  339  20 *    JS       -53              (d:288)
+- 51,5 -
+            16:
+  341  20 *    SUSPEND
+  342  20 *    CALLSYS  120           (void setGameOver())
+- 55,3 -
+            }
+            14:
+            }
+            13:
+            12:
+  344  20 *    SUSPEND
+  345  20 *    SetG4    161174896, 1084227584
+- 56,3 -
+  348  20 *    SUSPEND
+  349  20 *    SetV1    v2, 0x1
+  351  20 *    LDG      161176248
+  353  20 *    WRTV1    v2
+- 58,2 -
+            }
+            5:
+  354  20 *    SUSPEND
+            0:
+  355  20 *    RET      3

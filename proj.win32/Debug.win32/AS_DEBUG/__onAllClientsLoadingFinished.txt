@@ -1,0 +1,287 @@
+void onAllClientsLoadingFinished()
+
+Temps: 1, 9, 13, 27, 35, 36
+
+Variables: 
+ 002: uint ballSpawnPointIdx
+ 011: Vec2 spawnPos
+ 020: Parameters p
+ 028: uint ball
+ 036: (heap) Vec2 {noname}
+ 009: string {noname}
+ 013: Vec2 {noname}
+ 027: string {noname}
+ 035: Parameters {noname}
+
+
+- 113,2 -
+    0  36 *    SUSPEND
+    1  36 *    CALLSYS  118           (bool isServer())
+    3  36 *    CpyRtoV4 v1
+    4  36 *    NOT      v1
+    5  36 *    CpyVtoR4 v1
+    6  36 *    JLowZ    +3              (d:11)
+- 114,3 -
+    8  36 *    SUSPEND
+            {
+            }
+    9  36 *    JMP      +276              (d:287)
+- 116,2 -
+            1:
+   11  36 *    SUSPEND
+   12  36 *    PshC4    0x0          (i:0, f:0)
+   14  37 *    CALLSYS  176           (void checkPlayerRespawn(uint))
+- 118,2 -
+   16  36 *    SUSPEND
+               VarDecl  0
+   17  36 *    STR      4         (l:14 s:"BallSpawnP")
+   18  38 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   20  36 *    PshRPtr
+   21  37 *    PSF      v9
+   22  38 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   24  36 *    PSF      v9
+   25  37 *    CALLSYS  127           (uint getObjectIndexByName(const string&in))
+   27  36 *    CpyRtoV4 v1
+   28  36 *    PSF      v9
+   29  37 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   31  36 *    CpyVtoV4 v2, v1
+- 119,2 -
+   33  36 *    SUSPEND
+               VarDecl  1
+   34  36 *    PSF      v11
+   35  37 *    CALLSYS  108           (Vec2::Vec2())
+               ObjInfo  v11, 1
+   37  36 *    PshV4    v2
+   38  37 *    PSF      v13
+   39  38 *    CALLSYS  168           (Vec2 getObjectPosition(uint))
+               ObjInfo  v13, 1
+   41  36 *    PSF      v13
+   42  37 *    PSF      v11
+   43  38 *    COPY     v2, 67108877
+               ObjInfo  v13, 0
+   45  37 *    PopPtr
+- 121,2 -
+   46  36 *    SUSPEND
+               VarDecl  2
+   47  36 *    PSF      v20
+   48  37 *    CALLSYS  109           (Parameters::Parameters())
+- 122,2 -
+               ObjInfo  v20, 1
+   50  36 *    SUSPEND
+   51  36 *    STR      5         (l:4 s:"ball")
+   52  38 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   54  36 *    PshRPtr
+   55  37 *    PSF      v9
+   56  38 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   58  36 *    VAR      v9
+   59  37 *    STR      6         (l:4 s:"name")
+   60  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   62  37 *    PshRPtr
+   63  38 *    PSF      v27
+   64  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v27, 1
+   66  37 *    PSF      v27
+   67  38 *    PSF      v20
+   68  39 *    GETREF   2
+   69  39 *    CALLSYS  110           (void Parameters::setString(const string&in, const string&in) const)
+   71  36 *    PSF      v9
+   72  37 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   74  36 *    PSF      v27
+   75  37 *    CALLSYS  22           (string::~string())
+- 123,2 -
+               ObjInfo  v27, 0
+   77  36 *    SUSPEND
+   78  36 *    STR      7         (l:8 s:"Ball.png")
+   79  38 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   81  36 *    PshRPtr
+   82  37 *    PSF      v9
+   83  38 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   85  36 *    VAR      v9
+   86  37 *    STR      8         (l:6 s:"sprite")
+   87  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   89  37 *    PshRPtr
+   90  38 *    PSF      v27
+   91  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v27, 1
+   93  37 *    PSF      v27
+   94  38 *    PSF      v20
+   95  39 *    GETREF   2
+   96  39 *    CALLSYS  110           (void Parameters::setString(const string&in, const string&in) const)
+   98  36 *    PSF      v9
+   99  37 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+  101  36 *    PSF      v27
+  102  37 *    CALLSYS  22           (string::~string())
+- 124,2 -
+               ObjInfo  v27, 0
+  104  36 *    SUSPEND
+  105  36 *    PshC4    0x3f800000          (i:1065353216, f:1)
+  107  37 *    STR      9         (l:6 s:"scaleX")
+  108  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  110  37 *    PshRPtr
+  111  38 *    PSF      v27
+  112  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v27, 1
+  114  37 *    PSF      v27
+  115  38 *    PSF      v20
+  116  39 *    CALLSYS  113           (void Parameters::setFloat(const string&in, float) const)
+  118  36 *    PSF      v27
+  119  37 *    CALLSYS  22           (string::~string())
+- 125,2 -
+               ObjInfo  v27, 0
+  121  36 *    SUSPEND
+  122  36 *    PshC4    0x3f800000          (i:1065353216, f:1)
+  124  37 *    STR      10         (l:6 s:"scaleY")
+  125  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  127  37 *    PshRPtr
+  128  38 *    PSF      v9
+  129  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+  131  37 *    PSF      v9
+  132  38 *    PSF      v20
+  133  39 *    CALLSYS  113           (void Parameters::setFloat(const string&in, float) const)
+  135  36 *    PSF      v9
+  136  37 *    CALLSYS  22           (string::~string())
+- 126,2 -
+               ObjInfo  v9, 0
+  138  36 *    SUSPEND
+  139  36 *    PshC4    0x3f800000          (i:1065353216, f:1)
+  141  37 *    STR      11         (l:6 s:"radius")
+  142  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  144  37 *    PshRPtr
+  145  38 *    PSF      v27
+  146  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v27, 1
+  148  37 *    PSF      v27
+  149  38 *    PSF      v20
+  150  39 *    CALLSYS  113           (void Parameters::setFloat(const string&in, float) const)
+  152  36 *    PSF      v27
+  153  37 *    CALLSYS  22           (string::~string())
+- 127,2 -
+               ObjInfo  v27, 0
+  155  36 *    SUSPEND
+  156  36 *    PshC4    0x0          (i:0, f:0)
+  158  37 *    STR      12         (l:7 s:"offsetY")
+  159  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  161  37 *    PshRPtr
+  162  38 *    PSF      v9
+  163  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+  165  37 *    PSF      v9
+  166  38 *    PSF      v20
+  167  39 *    CALLSYS  113           (void Parameters::setFloat(const string&in, float) const)
+  169  36 *    PSF      v9
+  170  37 *    CALLSYS  22           (string::~string())
+- 128,2 -
+               ObjInfo  v9, 0
+  172  36 *    SUSPEND
+  173  36 *    PshC4    0x42700000          (i:1114636288, f:60)
+  175  37 *    STR      13         (l:11 s:"maxVelocit")
+  176  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  178  37 *    PshRPtr
+  179  38 *    PSF      v27
+  180  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v27, 1
+  182  37 *    PSF      v27
+  183  38 *    PSF      v20
+  184  39 *    CALLSYS  113           (void Parameters::setFloat(const string&in, float) const)
+  186  36 *    PSF      v27
+  187  37 *    CALLSYS  22           (string::~string())
+- 129,2 -
+               ObjInfo  v27, 0
+  189  36 *    SUSPEND
+  190  36 *    PshC4    0x41f00000          (i:1106247680, f:30)
+  192  37 *    STR      14         (l:8 s:"impulseX")
+  193  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  195  37 *    PshRPtr
+  196  38 *    PSF      v9
+  197  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+  199  37 *    PSF      v9
+  200  38 *    PSF      v20
+  201  39 *    CALLSYS  113           (void Parameters::setFloat(const string&in, float) const)
+  203  36 *    PSF      v9
+  204  37 *    CALLSYS  22           (string::~string())
+- 130,2 -
+               ObjInfo  v9, 0
+  206  36 *    SUSPEND
+  207  36 *    PshC4    0x42200000          (i:1109393408, f:40)
+  209  37 *    STR      15         (l:8 s:"impulseY")
+  210  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  212  37 *    PshRPtr
+  213  38 *    PSF      v27
+  214  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v27, 1
+  216  37 *    PSF      v27
+  217  38 *    PSF      v20
+  218  39 *    CALLSYS  113           (void Parameters::setFloat(const string&in, float) const)
+  220  36 *    PSF      v27
+  221  37 *    CALLSYS  22           (string::~string())
+- 131,2 -
+               ObjInfo  v27, 0
+  223  36 *    SUSPEND
+  224  36 *    SetV1    v1, 0x0
+  226  36 *    PshV4    v1
+  227  37 *    STR      16         (l:13 s:"centerImpu")
+  228  39 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  230  37 *    PshRPtr
+  231  38 *    PSF      v9
+  232  39 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+  234  37 *    PSF      v9
+  235  38 *    PSF      v20
+  236  39 *    CALLSYS  111           (void Parameters::setBool(const string&in, bool) const)
+  238  36 *    PSF      v9
+  239  37 *    CALLSYS  22           (string::~string())
+- 132,2 -
+               ObjInfo  v9, 0
+  241  36 *    SUSPEND
+               VarDecl  3
+  242  36 *    PSF      v35
+  243  37 *    CALLSYS  109           (Parameters::Parameters())
+               ObjInfo  v35, 1
+  245  36 *    PSF      v20
+  246  37 *    PSF      v35
+  247  38 *    COPY     v7, 67108878
+  249  37 *    PopPtr
+  250  36 *    VAR      v35
+  251  37 *    PSF      v36
+  252  38 *    ALLOC    0x97382c8, 108             (type:Vec2, {no func})
+  255  37 *    PSF      v11
+  256  38 *    PshVPtr  v36
+  257  39 *    COPY     v2, 67108877
+  259  38 *    PopPtr
+  260  37 *    VAR      v36
+  261  38 *    STR      5         (l:4 s:"ball")
+  262  40 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  264  38 *    PshRPtr
+  265  39 *    PSF      v27
+  266  40 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v27, 1
+  268  38 *    PSF      v27
+  269  39 *    GETOBJ   1
+  270  39 *    GETREF   2
+  271  39 *    CALLSYS  123           (uint spawnObject(const string&in, Vec2, Parameters&in))
+  273  36 *    CpyRtoV4 v1
+               ObjInfo  v35, 0
+  274  36 *    PSF      v27
+  275  37 *    CALLSYS  22           (string::~string())
+               ObjInfo  v27, 0
+  277  36 *    CpyVtoV4 v28, v1
+- 133,2 -
+  279  36 *    SUSPEND
+  280  36 *    SetV1    v1, 0x0
+  282  36 *    PshV4    v1
+  283  37 *    PshV4    v28
+  284  38 *    CALLSYS  175           (void setBodyAwake(uint, bool))
+- 134,2 -
+  286  36 *    SUSPEND
+               ObjInfo  v20, 0
+               ObjInfo  v11, 0
+            0:
+  287  36 *    RET      0

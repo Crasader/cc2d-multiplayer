@@ -1,0 +1,67 @@
+void onClientDisconnected(uint16)
+
+Temps: 1, 2, 3, 4, 5
+
+Variables: 
+ 000: uint16 clientId
+ 002: (heap) array {noname}
+ 003: (heap) array {noname}
+
+
+- 66,2 -
+               VarDecl  0
+    0   5 *    SUSPEND
+    1   5 *    VAR      v0
+    2   6 *    PshC4    0x0          (i:0, f:0)
+    4   7 *    PshGPtr  161465744
+    6   8 *    CHKREF
+    7   8 *    RefCpyV  v3, 161246248
+    9   8 *    Thiscall1 193           (Team& array::opIndex(uint))
+   11   6 *    PshRPtr
+   12   7 *    ADDSi    v20, 134217745
+   14   7 *    RDSPtr
+   15   7 *    GETREF   1
+   16   7 *    CALLSYS  228           (int array::find(const uint16&in) const)
+   18   5 *    CpyRtoV4 v4
+   19   5 *    FREE     v3, 161246248
+   21   5 *    PshV4    v4
+   22   6 *    PshC4    0x0          (i:0, f:0)
+   24   7 *    PshGPtr  161465744
+   26   8 *    CHKREF
+   27   8 *    RefCpyV  v2, 161246248
+   29   8 *    Thiscall1 193           (Team& array::opIndex(uint))
+   31   6 *    PshRPtr
+   32   7 *    ADDSi    v20, 134217745
+   34   7 *    RDSPtr
+   35   7 *    CALLSYS  83           (void array::removeAt(uint))
+   37   5 *    FREE     v2, 161246248
+- 67,2 -
+   39   5 *    SUSPEND
+   40   5 *    VAR      v0
+   41   6 *    PshC4    0x1          (i:1, f:1.4013e-045)
+   43   7 *    PshGPtr  161465744
+   45   8 *    CHKREF
+   46   8 *    RefCpyV  v2, 161246248
+   48   8 *    Thiscall1 193           (Team& array::opIndex(uint))
+   50   6 *    PshRPtr
+   51   7 *    ADDSi    v20, 134217745
+   53   7 *    RDSPtr
+   54   7 *    GETREF   1
+   55   7 *    CALLSYS  228           (int array::find(const uint16&in) const)
+   57   5 *    CpyRtoV4 v5
+   58   5 *    FREE     v2, 161246248
+   60   5 *    PshV4    v5
+   61   6 *    PshC4    0x1          (i:1, f:1.4013e-045)
+   63   7 *    PshGPtr  161465744
+   65   8 *    CHKREF
+   66   8 *    RefCpyV  v3, 161246248
+   68   8 *    Thiscall1 193           (Team& array::opIndex(uint))
+   70   6 *    PshRPtr
+   71   7 *    ADDSi    v20, 134217745
+   73   7 *    RDSPtr
+   74   7 *    CALLSYS  83           (void array::removeAt(uint))
+   76   5 *    FREE     v3, 161246248
+- 68,2 -
+   78   5 *    SUSPEND
+            0:
+   79   5 *    RET      1

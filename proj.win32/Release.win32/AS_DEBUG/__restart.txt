@@ -1,0 +1,94 @@
+void restart()
+
+Temps: 1, 9, 13
+
+Variables: 
+ 002: uint ballSpawnPointIdx
+ 011: Vec2 spawnPos
+ 014: uint ballIdx
+ 009: string {noname}
+ 013: Vec2 {noname}
+
+
+- 100,2 -
+    0  14 *    SUSPEND
+    1  14 *    CALLSYS  118           (bool isServer())
+    3  14 *    CpyRtoV4 v1
+    4  14 *    NOT      v1
+    5  14 *    CpyVtoR4 v1
+    6  14 *    JLowZ    +3              (d:11)
+- 101,3 -
+    8  14 *    SUSPEND
+            {
+            }
+    9  14 *    JMP      +67              (d:78)
+- 103,2 -
+            1:
+   11  14 *    SUSPEND
+               VarDecl  0
+   12  14 *    STR      4         (l:14 s:"BallSpawnP")
+   13  16 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   15  14 *    PshRPtr
+   16  15 *    PSF      v9
+   17  16 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   19  14 *    PSF      v9
+   20  15 *    CALLSYS  127           (uint getObjectIndexByName(const string&in))
+   22  14 *    CpyRtoV4 v1
+   23  14 *    PSF      v9
+   24  15 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   26  14 *    CpyVtoV4 v2, v1
+- 104,2 -
+   28  14 *    SUSPEND
+               VarDecl  1
+   29  14 *    PSF      v11
+   30  15 *    CALLSYS  108           (Vec2::Vec2())
+               ObjInfo  v11, 1
+   32  14 *    PshV4    v2
+   33  15 *    PSF      v13
+   34  16 *    CALLSYS  168           (Vec2 getObjectPosition(uint))
+               ObjInfo  v13, 1
+   36  14 *    PSF      v13
+   37  15 *    PSF      v11
+   38  16 *    COPY     v2, 67108877
+               ObjInfo  v13, 0
+   40  15 *    PopPtr
+- 105,2 -
+   41  14 *    SUSPEND
+               VarDecl  2
+   42  14 *    STR      5         (l:4 s:"ball")
+   43  16 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   45  14 *    PshRPtr
+   46  15 *    PSF      v9
+   47  16 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v9, 1
+   49  14 *    PSF      v9
+   50  15 *    CALLSYS  127           (uint getObjectIndexByName(const string&in))
+   52  14 *    CpyRtoV4 v1
+   53  14 *    PSF      v9
+   54  15 *    CALLSYS  22           (string::~string())
+               ObjInfo  v9, 0
+   56  14 *    CpyVtoV4 v14, v1
+- 106,2 -
+   58  14 *    SUSPEND
+   59  14 *    VAR      v11
+   60  15 *    PshV4    v14
+   61  16 *    GETREF   1
+   62  16 *    CALLSYS  169           (void setObjectPosition(uint, const Vec2&in))
+- 107,2 -
+   64  14 *    SUSPEND
+   65  14 *    PshC4    0x0          (i:0, f:0)
+   67  15 *    PshV4    v14
+   68  16 *    CALLSYS  171           (void setObjectRotation(uint, float))
+- 108,2 -
+   70  14 *    SUSPEND
+   71  14 *    SetV1    v1, 0x0
+   73  14 *    PshV4    v1
+   74  15 *    PshV4    v14
+   75  16 *    CALLSYS  175           (void setBodyAwake(uint, bool))
+- 109,2 -
+   77  14 *    SUSPEND
+               ObjInfo  v11, 0
+            0:
+   78  14 *    RET      0

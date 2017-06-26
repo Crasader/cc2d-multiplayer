@@ -1,0 +1,88 @@
+void update(float)
+
+Temps: 1, 2
+
+Variables: 
+ 000: float deltaTime
+
+
+- 216,2 -
+               VarDecl  0
+    0   2 *    SUSPEND
+    1   2 *    CALLSYS  118           (bool isServer())
+    3   2 *    CpyRtoV4 v1
+    4   2 *    NOT      v1
+    5   2 *    CpyVtoR4 v1
+    6   2 *    JLowZ    +4              (d:12)
+    8   2 *    SetV1    v1, 0x1
+   10   2 *    JMP      +5              (d:17)
+            2:
+   12   2 *    CALLSYS  121           (bool isGameOver())
+   14   2 *    CpyRtoV4 v2
+   15   2 *    CpyVtoV4 v1, v2
+            3:
+   17   2 *    CpyVtoR4 v1
+   18   2 *    JLowZ    +3              (d:23)
+- 217,3 -
+   20   2 *    SUSPEND
+            {
+            }
+   21   2 *    JMP      +61              (d:84)
+- 219,2 -
+            1:
+   23   2 *    SUSPEND
+   24   2 *    CpyGtoV4 v2, 161174896
+   26   2 *    CMPIf    v2, 0.000000
+   28   2 *    JNP      +48              (d:78)
+- 221,3 -
+            {
+   30   2 *    SUSPEND
+   31   2 *    LdGRdR4  v1, 161174896
+   33   2 *    SUBf     v2, v1, v0
+   35   2 *    WRTV4    v2
+- 223,3 -
+   36   2 *    SUSPEND
+   37   2 *    SetV1    v1, 0x1
+   39   2 *    PshV4    v1
+   40   3 *    CALLSYS  180           (void showGameTimer(bool))
+- 224,3 -
+   42   2 *    SUSPEND
+   43   2 *    CpyGtoV4 v2, 161174896
+   45   2 *    fTOi     v2
+   46   2 *    ADDIi    v2, v2, 1
+   49   2 *    PshV4    v2
+   50   3 *    CALLSYS  181           (void setGameTimer(int))
+- 226,3 -
+   52   2 *    SUSPEND
+   53   2 *    CpyGtoV4 v1, 161174896
+   55   2 *    CMPIf    v1, 0.000000
+   57   2 *    JP       +19              (d:78)
+- 228,4 -
+            {
+   59   2 *    SUSPEND
+   60   2 *    SetG4    161174896, 0
+- 229,4 -
+   63   2 *    SUSPEND
+   64   2 *    SetV1    v1, 0x0
+   66   2 *    LDG      161176248
+   68   2 *    WRTV1    v1
+- 231,4 -
+   69   2 *    SUSPEND
+   70   2 *    SetV1    v2, 0x0
+   72   2 *    PshV4    v2
+   73   3 *    CALLSYS  180           (void showGameTimer(bool))
+- 233,4 -
+   75   2 *    SUSPEND
+   76   2 *    CALL     208           (void restart())
+- 237,2 -
+            }
+            5:
+            }
+            4:
+   78   2 *    SUSPEND
+   79   2 *    PshC4    0x1388          (i:5000, f:7.00649e-042)
+   81   3 *    CALLSYS  176           (void checkPlayerRespawn(uint))
+- 238,2 -
+   83   2 *    SUSPEND
+            0:
+   84   2 *    RET      1

@@ -1,0 +1,68 @@
+int getTeam(uint16)
+
+Temps: 1, 2, 3, 4
+
+Variables: 
+ 000: uint16 clientId
+ 002: (heap) array {noname}
+
+
+- 138,2 -
+               VarDecl  0
+    0   4 *    SUSPEND
+    1   4 *    VAR      v0
+    2   5 *    PshC4    0x0          (i:0, f:0)
+    4   6 *    PshGPtr  161465744
+    6   7 *    CHKREF
+    7   7 *    RefCpyV  v2, 161246248
+    9   7 *    Thiscall1 193           (Team& array::opIndex(uint))
+   11   5 *    PshRPtr
+   12   6 *    ADDSi    v20, 134217745
+   14   6 *    RDSPtr
+   15   6 *    GETREF   1
+   16   6 *    CALLSYS  228           (int array::find(const uint16&in) const)
+   18   4 *    CpyRtoV4 v1
+   19   4 *    FREE     v2, 161246248
+   21   4 *    CMPIi    v1, 0
+   23   4 *    JS       +6              (d:31)
+- 139,3 -
+   25   4 *    SUSPEND
+   26   4 *    SetV4    v3, 0x0          (i:0, f:0)
+            {
+            }
+   28   4 *    CpyVtoR4 v3
+   29   4 *    JMP      +35              (d:66)
+- 140,2 -
+            1:
+   31   4 *    SUSPEND
+   32   4 *    VAR      v0
+   33   5 *    PshC4    0x1          (i:1, f:1.4013e-045)
+   35   6 *    PshGPtr  161465744
+   37   7 *    CHKREF
+   38   7 *    RefCpyV  v2, 161246248
+   40   7 *    Thiscall1 193           (Team& array::opIndex(uint))
+   42   5 *    PshRPtr
+   43   6 *    ADDSi    v20, 134217745
+   45   6 *    RDSPtr
+   46   6 *    GETREF   1
+   47   6 *    CALLSYS  228           (int array::find(const uint16&in) const)
+   49   4 *    CpyRtoV4 v3
+   50   4 *    FREE     v2, 161246248
+   52   4 *    CMPIi    v3, 0
+   54   4 *    JS       +6              (d:62)
+- 141,3 -
+   56   4 *    SUSPEND
+   57   4 *    SetV4    v4, 0x1          (i:1, f:1.4013e-045)
+            {
+            }
+   59   4 *    CpyVtoR4 v4
+   60   4 *    JMP      +4              (d:66)
+- 143,2 -
+            2:
+   62   4 *    SUSPEND
+   63   4 *    SetV4    v1, 0xffffffff          (i:-1, f:-1.#QNAN)
+            {
+            }
+   65   4 *    CpyVtoR4 v1
+            0:
+   66   4 *    RET      1
