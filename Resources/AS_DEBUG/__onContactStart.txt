@@ -1,0 +1,34 @@
+void onContactStart(uint, uint, const ContactInfo&in)
+
+Temps: 1, 3, 10
+
+Variables: 
+ 000: uint owner
+ -001: uint obj
+ -002: const ContactInfo& contact
+ 010: string {noname}
+
+
+- 10,2 -
+               VarDecl  0
+               VarDecl  1
+               VarDecl  2
+    0  10 *    SUSPEND
+    1  10 *    CpyVtoV4 v1, v0
+    3  10 *    uTOi64   v3, v1
+    5  10 *    PshV8    v3
+    6  12 *    PSF      v10
+    7  13 *    STR      1         (l:8 s:"contact ")
+    8  15 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   10  13 *    PshRPtr
+   11  14 *    CALLSYS  49           (string string::opAdd(uint64) const)
+               ObjInfo  v10, 1
+   13  10 *    PSF      v10
+   14  11 *    CALLSYS  107           (void print(const string&in))
+   16  10 *    PSF      v10
+   17  11 *    CALLSYS  22           (string::~string())
+- 11,2 -
+               ObjInfo  v10, 0
+   19  10 *    SUSPEND
+            0:
+   20  10 *    RET      3

@@ -1,0 +1,149 @@
+void spawnCoin()
+
+Temps: 1, 3, 5, 6, 10, 25, 26, 33, 40
+
+Variables: 
+ 002: (heap) uint[] arr
+ 004: int randomTargetPointNumber
+ 008: Vec2 spawnPos
+ 017: Parameters p
+ 018: uint coinIdx
+ 003: (heap) array {noname}
+ 026: (heap) Vec2 {noname}
+ 010: Vec2 {noname}
+ 025: Parameters {noname}
+ 033: string {noname}
+ 040: string {noname}
+
+
+- 58,2 -
+    0  40 *    SUSPEND
+    1  40 *    CALLSYS  118           (bool isServer())
+    3  40 *    CpyRtoV4 v1
+    4  40 *    NOT      v1
+    5  40 *    CpyVtoR4 v1
+    6  40 *    JLowZ    +3              (d:11)
+- 59,3 -
+    8  40 *    SUSPEND
+            {
+            }
+    9  40 *    JMP      +124              (d:135)
+- 61,2 -
+            1:
+   11  40 *    SUSPEND
+               VarDecl  0
+   12  40 *    PshC4    0x7          (i:7, f:9.80909e-045)
+   14  41 *    CALLSYS  165           (uint[]@ findObjectsIndexByType(uint))
+   16  40 *    STOREOBJ v3
+   17  40 *    ChkNullV v3
+   18  40 *    VAR      v3
+   19  41 *    CALL     150           (uint[]@ $fact())
+   21  41 *    STOREOBJ v2
+   22  41 *    PshVPtr  v2
+   23  42 *    GETOBJREF 1
+   24  42 *    CALLSYS  156           (uint[]& array::opAssign(const uint[]&in))
+   26  40 *    FREE     v3, 165214384
+- 63,2 -
+   28  40 *    SUSPEND
+               VarDecl  1
+   29  40 *    PshVPtr  v2
+   30  41 *    CALLSYS  86           (uint array::length() const)
+   32  40 *    CpyRtoV4 v1
+   33  40 *    SUBIi    v1, v1, 1
+   36  40 *    PshV4    v1
+   37  41 *    PshC4    0x0          (i:0, f:0)
+   39  42 *    CALLSYS  183           (int randomInt(int, int))
+   41  40 *    CpyRtoV4 v6
+   42  40 *    CpyVtoV4 v4, v6
+- 65,2 -
+   44  40 *    SUSPEND
+               VarDecl  2
+   45  40 *    PSF      v8
+   46  41 *    CALLSYS  108           (Vec2::Vec2())
+               ObjInfo  v8, 1
+   48  40 *    PshV4    v4
+   49  41 *    PshVPtr  v2
+   50  42 *    Thiscall1 154           (uint& array::opIndex(uint))
+   52  40 *    RDR4     v1
+   53  40 *    PshV4    v1
+   54  41 *    PSF      v10
+   55  42 *    CALLSYS  168           (Vec2 getObjectPosition(uint))
+               ObjInfo  v10, 1
+   57  40 *    PSF      v10
+   58  41 *    PSF      v8
+   59  42 *    COPY     v2, 67108877
+               ObjInfo  v10, 0
+   61  41 *    PopPtr
+- 67,2 -
+   62  40 *    SUSPEND
+               VarDecl  3
+   63  40 *    PSF      v17
+   64  41 *    CALLSYS  109           (Parameters::Parameters())
+- 68,2 -
+               ObjInfo  v17, 1
+   66  40 *    SUSPEND
+               VarDecl  4
+   67  40 *    PSF      v25
+   68  41 *    CALLSYS  109           (Parameters::Parameters())
+               ObjInfo  v25, 1
+   70  40 *    PSF      v17
+   71  41 *    PSF      v25
+   72  42 *    COPY     v7, 67108878
+   74  41 *    PopPtr
+   75  40 *    VAR      v25
+   76  41 *    PSF      v26
+   77  42 *    ALLOC    0x9d881e8, 108             (type:Vec2, {no func})
+   80  41 *    PSF      v8
+   81  42 *    PshVPtr  v26
+   82  43 *    COPY     v2, 67108877
+   84  42 *    PopPtr
+   85  41 *    VAR      v26
+   86  42 *    STR      0         (l:4 s:"coin")
+   87  44 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+   89  42 *    PshRPtr
+   90  43 *    PSF      v33
+   91  44 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v33, 1
+   93  42 *    PSF      v33
+   94  43 *    GETOBJ   1
+   95  43 *    GETREF   2
+   96  43 *    CALLSYS  123           (uint spawnObject(const string&in, Vec2, Parameters&in))
+   98  40 *    CpyRtoV4 v6
+               ObjInfo  v25, 0
+   99  40 *    PSF      v33
+  100  41 *    CALLSYS  22           (string::~string())
+               ObjInfo  v33, 0
+  102  40 *    CpyVtoV4 v18, v6
+- 70,2 -
+  104  40 *    SUSPEND
+  105  40 *    STR      1         (l:21 s:"onTriggerC")
+  106  42 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  108  40 *    PshRPtr
+  109  41 *    PSF      v33
+  110  42 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v33, 1
+  112  40 *    VAR      v33
+  113  41 *    STR      2         (l:12 s:"contactEnt")
+  114  43 *    CALLSYS  19           (const string& $str(const int, const uint8&in))
+  116  41 *    PshRPtr
+  117  42 *    PSF      v40
+  118  43 *    CALLSYS  21           (string::string(const string&in))
+               ObjInfo  v40, 1
+  120  41 *    VAR      v40
+  121  42 *    PshV4    v18
+  122  43 *    GETREF   1
+  123  43 *    GETREF   2
+  124  43 *    CALLSYS  174           (void addObjectEvent(uint, const string&in, const string&in))
+  126  40 *    PSF      v33
+  127  41 *    CALLSYS  22           (string::~string())
+               ObjInfo  v33, 0
+  129  40 *    PSF      v40
+  130  41 *    CALLSYS  22           (string::~string())
+- 71,2 -
+               ObjInfo  v40, 0
+  132  40 *    SUSPEND
+               ObjInfo  v17, 0
+               ObjInfo  v8, 0
+  133  40 *    FREE     v2, 165214384
+            0:
+  135  40 *    RET      0

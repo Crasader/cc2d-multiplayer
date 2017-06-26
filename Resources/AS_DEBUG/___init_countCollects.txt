@@ -1,0 +1,18 @@
+<unrecognized token> _unnamed_function_()
+
+Temps: 1
+
+Variables: 
+ 001: (heap) array {noname}
+
+
+- 10,12 -
+    0   1 *    SUSPEND
+    1   1 *    CALL     205           (int[]@ $fact())
+    3   1 *    STOREOBJ v1
+    4   1 *    PshVPtr  v1
+    5   2 *    PGA      227818520
+    7   3 *    REFCPY   0xd924928
+    9   2 *    PopPtr
+   10   1 *    FREE     v1, 227690792
+   12   1 *    RET      0
